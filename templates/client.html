@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>WebSocket</h1>
+<!--<script type="text/javascript">-->
+    <!--var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";-->
+    <!--var puppysock = new WebSocket(ws_scheme + '://' + window.location.host + "/puppy");-->
+
+    <!--puppysock.onmessage = function(message) {-->
+        <!--var data = JSON.parse(message.data);-->
+        <!--var puppy = $("#puppy");-->
+        <!--var ele = $('<tr></tr>');-->
+        <!--ele.append(-->
+            <!--$("<td></td>").text(data.timestamp)-->
+        <!--);-->
+        <!--var ele = $('<tr></tr>');-->
+        <!--ele.append(-->
+            <!--$("<td></td>").text(data.message)-->
+        <!--);-->
+
+        <!--puppy.append(ele);-->
+    <!--};-->
+
+    <!--puppysock.onopen = function () {-->
+        <!--puppysock.send("hello, I am in!")-->
+    <!--};-->
+
+    <!--if (puppysock.readyState == WebSocket.OPEN) puppysock.onopen();-->
+<!--</script>-->
+
+<!--
+    <p>
+    <label for="handle">Your name:</label>
+    <input id="handle" type="text" placeholder="handle">
+  </p>
+-->
+    <div>
+        <form id="gatewayform">
+            <table id="gateway">
+                <thead>
+                    <tr>
+                        <td>Say something:</td>
+                        <td colspan=2>
+                            <input id="message" type="text" placeholder="message">
+                            <button type="submit" id="go">Confirm Message</button>
+                            <input type="button" id="clear" value="清空">
+                        </td>
+                    <tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </form>
+    </div>
+{% load staticfiles %}
+  <script type="text/javascript" src='{% static "jquery-1.12.1.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "reconnecting-websocket.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "gateway.js" %}'></script>
+
+</body>
+
+</html>
